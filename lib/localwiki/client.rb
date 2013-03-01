@@ -84,6 +84,14 @@ module Localwiki
       raise 'Not Yet Implemented'
     end
 
+    ##
+    #collect historical resources
+    #resources are "history_comment", "history_date", "history_type", "history_user", "history_user_ip"
+    def fetch_version (resource_version,identifier,params={})
+      uri = '/api/page_version/' + resource_version.to_s + '/' + identifier
+      alt_http_get(uri,params)
+    end
+
     private
 
     ##

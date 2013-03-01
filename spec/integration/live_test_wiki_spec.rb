@@ -27,6 +27,17 @@ if test_env_vars_set?
         # puts response.headers["location"]
       end
 
+
+    end
+
+    contect "#fetch_version" do
+      it 'check histoy resources' do
+        subject.history_user_name.should eq ["adkinsm"]
+        subject.history_date.should eq "Feb."
+        subject.history_time.should eq 'America/Chicago'
+        subject.history_comment.should eq ""
+
+      end
     end
 
   end
